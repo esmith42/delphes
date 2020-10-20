@@ -446,7 +446,8 @@ tmp/modules/ModulesDict.$(SrcSuf): \
 	modules/VertexFinderDA4D.h \
 	modules/DecayFilter.h \
 	modules/ParticleDensity.h \
-	modules/ExampleModule.h
+	modules/ExampleModule.h \
+	modules/RotationModule.h
 tmp/modules/ModulesDict$(PcmSuf): \
 	tmp/modules/ModulesDict.$(SrcSuf)
 ModulesDict$(PcmSuf): \
@@ -965,6 +966,15 @@ tmp/modules/RecoPuFilter.$(ObjSuf): \
 	external/ExRootAnalysis/ExRootClassifier.h \
 	external/ExRootAnalysis/ExRootFilter.h \
 	external/ExRootAnalysis/ExRootResult.h
+tmp/modules/RotationModule.$(ObjSuf): \
+	modules/RotationModule.$(SrcSuf) \
+	modules/RotationModule.h \
+	classes/DelphesClasses.h \
+	classes/DelphesFactory.h \
+	classes/DelphesFormula.h \
+	external/ExRootAnalysis/ExRootClassifier.h \
+	external/ExRootAnalysis/ExRootFilter.h \
+	external/ExRootAnalysis/ExRootResult.h
 tmp/modules/SimpleCalorimeter.$(ObjSuf): \
 	modules/SimpleCalorimeter.$(SrcSuf) \
 	modules/SimpleCalorimeter.h \
@@ -1194,6 +1204,7 @@ DELPHES_OBJ +=  \
 	tmp/modules/PileUpJetID.$(ObjSuf) \
 	tmp/modules/PileUpMerger.$(ObjSuf) \
 	tmp/modules/RecoPuFilter.$(ObjSuf) \
+	tmp/modules/RotationModule.$(ObjSuf) \
 	tmp/modules/SimpleCalorimeter.$(ObjSuf) \
 	tmp/modules/StatusPidFilter.$(ObjSuf) \
 	tmp/modules/TaggingParticlesSkimmer.$(ObjSuf) \
@@ -2002,6 +2013,10 @@ external/fastjet/ClusterSequenceArea.hh: \
 	external/fastjet/ClusterSequencePassiveArea.hh \
 	external/fastjet/ClusterSequenceVoronoiArea.hh \
 	external/fastjet/AreaDefinition.hh
+	@touch $@
+
+modules/RotationModule.h: \
+	classes/DelphesModule.h
 	@touch $@
 
 modules/JetFakeParticle.h: \

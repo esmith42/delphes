@@ -75,6 +75,7 @@
 #include "modules/DecayFilter.h"
 #include "modules/ParticleDensity.h"
 #include "modules/ExampleModule.h"
+#include "modules/RotationModule.h"
 
 #ifdef __CINT__
 
@@ -132,5 +133,6 @@
 #pragma link C++ class DecayFilter+;
 #pragma link C++ class ParticleDensity+;
 #pragma link C++ class ExampleModule+;
+#pragma link C++ class RotationModule+;
 
 #endif
